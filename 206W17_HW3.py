@@ -23,10 +23,11 @@ data = new_file.read()
 ## Write code to define your parse_counted_words function here.
 
 def parse_counted_words(string_type):
+    # The file will be parsed in the data 
     regex = r"\b([0-9]+)\s(.[A-Za-z]+)"
 
     some_tuples = re.findall(regex, string_type)
-    
+    # returns tuples
     if some_tuples:
         return some_tuples[-1]
 
@@ -38,6 +39,7 @@ def parse_counted_words(string_type):
 
 ## (a) Write Python code to determine how many of these paths identify FILES, not directories. Save that number in the variable file_paths_num.
 
+#reads in a new string 
 regex = r"\b(\w+\.[A-Za-z]+$)"
 
 no = re.findall(regex, data, re.MULTILINE)
